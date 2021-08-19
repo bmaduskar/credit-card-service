@@ -8,6 +8,8 @@ A spring boot application which exposes 2 RestEndpoints to execute credit cart r
   - SpringFox Swagger
   - SpringFox UI
   - Junits
+  - SureFire Reports
+  - Docker com.spotify v1.3.6 Plugin
   - Maven 4.0
 
 ### Installation
@@ -24,11 +26,17 @@ For Running Tests and Generating the Test Report:
 
 ```sh
 $ mvn test
+$ mvn surefire-report:report-only
+$ mvn site -DgenerateReports=false
 ```
 ### Docker
 To Create A Docker Image Using Maven
 ```sh
 $ mvn clean package docker:build
+```
+This application is available over Docker Hub io
+```sh
+docker pull varuneshwarnathmathur/creditcardprocessor:latest
 ```
 **Docker Run**
 ```sh
